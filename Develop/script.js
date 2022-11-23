@@ -11,6 +11,12 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword () {
   console.log("Button is Clicked");
+  var password ="";
+  for(var i=0; i < characterLength; i++ ) {
+    var randomLetter = Math.floor(Math.random() * choiceArr.length)
+    password = password + choiceArr[randomLetter];
+  }
+  return password;
 }
 
 function getPrompts() {
@@ -39,11 +45,14 @@ function getPrompts() {
 
 // Write password to the #password input
 function writePassword() {
+  var correctPrompts = getPrompts();
+
+  if (correctPrompts) {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  }
 }
 
 // Add event listener to generate button
