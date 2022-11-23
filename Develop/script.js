@@ -23,6 +23,8 @@ function writePassword() {
   }
 }
 
+//  The function generatePassword() is the math part of the password generator that randomly selects the passwords values.
+
 function generatePassword () {
   console.log("Button is Clicked");
   var password ="";
@@ -33,6 +35,9 @@ function generatePassword () {
   return password;
 }
 
+// getPrompts() is the overall function that opens all the prompts related to making the password. 
+// The While statement makes the user restart the password generation if no values are selected. 
+
 function getPrompts() {
   choiceArr = [];
   characterLength = prompt("How many characters do you want in your password? (8-128 characters)");
@@ -41,17 +46,21 @@ function getPrompts() {
     alert("Character length MUST be a number, 8-128 characters only.")
     return false;
   }
-  if (confirm("Would you like lowercase letters in this password?")) {
+  if (lowCase = confirm("Click OK if you would like to include lower case letters.")) {
     choiceArr = choiceArr.concat(lowerCaseArr);
   }
-  if (confirm("Would you like uppercase letters in this password?")) {
+  if (uppCase = confirm("Click OK if you would like to include upper case letters.")) {
       choiceArr = choiceArr.concat(upperCaseArr);
   }
-  if (confirm("Would you like special characters in this password?")) {
+  if (specSym = confirm("Click OK if you would like to include special characters.")) {
       choiceArr = choiceArr.concat(specialCharArr);
   }
-  if (confirm("Would you like numbers in this password?")) {
+  if (numbers = confirm("Click OK if you would like to include numbers.")) {
     choiceArr = choiceArr.concat(numberArr);
+  }
+  while (!lowCase && !uppCase && !numbers && !specSym) {
+    alert("You must select at least one value for your password. Please try again.")
+    return false;
   }
   return true;
 }
