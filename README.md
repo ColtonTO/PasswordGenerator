@@ -21,6 +21,7 @@
 * E. Click "OK" if you would like to include special characters.
 * F. Click "OK" if you would like to include numbers.
 * G. Congratulations! As long as you selected at least one value from steps C-F, you will have your brand new password! 
+* H. If you are having any problems, refer to the Assets folder for more screenshots on the functionality of the webpage. 
 
 ## Website Screenshot
 ![Screenshot_20221125_043322](https://user-images.githubusercontent.com/116236745/203986905-8e300370-24d3-4c9b-9ee0-e5b8cf8c6736.png)
